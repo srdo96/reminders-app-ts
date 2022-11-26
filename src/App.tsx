@@ -1,13 +1,26 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
+import ReminderList from "./components/ReminderList";
+import Reminder from "./models/reminder";
+
+// const reminder: Reminder[] = [
+//   {
+//     id: 1,
+//     title: "Reminder1",
+//   },
+// ];
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const [reminders, setReminders] = useState<Reminder[]>([
+    {
+      id: 1,
+      title: "Reminder1",
+    },
+  ]);
   return (
     <div className="App">
-      <button className="btn btn-primary">Click Me</button>
+      <ReminderList items={reminders} />
     </div>
   );
 }
